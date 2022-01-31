@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
+import { CardList } from './components/card-list/card-list.component';
 
-class App extends Component {
+class App extends React.Component {
 
   constructor() {
     super()
@@ -13,22 +14,30 @@ class App extends Component {
   }
 
   componentDidMount() {
+    console.log(this.state)
     fetch('https://jsonplaceholder.typicode.com/users')
     .then(res => res.json())
-    .then(users => {this.setState({monsters:users})});
+    .then(users => {this.setState({monsters:users})})
   }
 
   render()  {
     return (
     <div className="App">
-        <p>{this.state.message}</p>
-        <button onClick={() => this.setState({message:'button is clicked'})}>Click here</button>
-        {this.state.monsters.map(monster => (
-          <h1 key={monster.id}>{monster.name}</h1>
-        ))}
+          <p>{this.state.message}</p>
+          <h3>Hello, Bharath</h3>
+          <button onClick={() => this.setState({message:'button is clicked'})}>Click here</button>
+          <CardList name="Bharath" role='Operator'>
+            {this.state.monsters.map(monster => (
+              <h1 key={monster.id}>{monster.name}</h1>
+            ))}
+          </CardList>
+
     </div>
     );
   }
 }
+
+
+
 
 export default App;
