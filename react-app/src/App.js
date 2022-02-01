@@ -26,12 +26,7 @@ class App extends React.Component {
           <p>{this.state.message}</p>
           <h3>Hello, Bharath</h3>
           <button onClick={() => this.setState({message:'button is clicked'})}>Click here</button>
-          <CardList name="Bharath" role='Operator'>
-            {this.state.monsters.map(monster => (
-              <h1 key={monster.id}>{monster.name}</h1>
-            ))}
-          </CardList>
-
+          <CardList name="Bharath" role='Operator' monsters={this.state.monsters}/>
     </div>
     );
   }
