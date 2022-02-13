@@ -66,4 +66,3 @@ print('List3 Sliced: ', list3[0:2])
 
 
 
-
