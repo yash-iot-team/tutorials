@@ -44,4 +44,39 @@ print(msg1 + msg3)
 print(msg1 *3)
 print("i" in msg1)
 
+msg4 = 'Cisco Model: %s, %d WAN Slots, IOS %f' % ('2600F', 10, 12.54) #Cisco Model: 2600F, 10 WAN Slots, IOS 12.540000
+print(msg4)
+msg4 = 'Cisco Model: %s, %d WAN Slots, IOS %.2f' % ('2600F', 10, 12.54)
+print(msg4)
+msg4 = 'Cisco Model: %s, %d WAN Slots, IOS %.f' % ('2600F', 10, 12.54)
+print(msg4)
+
+# Formatting Strings
+msg4 = 'Cisco Model: {}, {} WAN Slots, IOS {}' 
+print(msg4.format('2600F', 10, 12.54))
+msg4 = 'Cisco Model: {0}, {1} WAN Slots, IOS {2}' 
+print(msg4.format('2600F', 10, 12.54))
+
+# F Strings
+model = '2600F'
+slots = 10
+ios = 12.54
+print(f'Cisco Model: {model}, {slots} WAN Slots, IOS {ios}')
+print(f'Cisco Model: {model}, {slots*2} WAN Slots, IOS {ios}')
+print(f'Cisco Model: {model.lower()}, {slots*2} WAN Slots, IOS {ios}')
+
+msg5 = 'Reply from 146.112.51.52: bytes=32 time=361ms TTL=53'
+print(msg5.find('14'))
+print(msg5.find(':'))
+print('IP Address: ', msg5[11:24])
+print(msg5.find('='))
+print('Bytes Sent: ', msg5[32:34])
+
+msg5 = '0123456789'
+print(msg5[::2])
+print(msg5[1::2])
+print(msg5[1:7:2])
+
+
+
 
